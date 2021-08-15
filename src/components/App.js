@@ -95,26 +95,27 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Colour Tokens
-          </a>
-          <p
-            className="navbar-brand col-sm-6 col-md-7 pull-right"
-          >
-            your account: { this.state.account }
-          </p>
+        <nav className="navbar navbar-dark bg-dark p-0 shadow">
+          <div>
+            <a
+              className="navbar-brand col-sm-3 col-md-4 mr-0"
+              href="http://www.dappuniversity.com/bootcamp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Colour Tokens
+            </a>
+          </div>
+          <div
+            className="navbar-brand col-sm-9 col-md-8 pull-right text-right">
+            { this.state.account && this.state.account }
+          </div>
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <h1>Issue Token</h1>
+                <h1 style={{ margin: '14px 0', color: 'grey' }}>Issue Token</h1>
                 <form onSubmit={(e) => {
                   e.preventDefault();
                   const colour = this.colour.value;
@@ -135,10 +136,10 @@ class App extends Component {
                 </form>
               </div>
             </main>
-            <div className="col-lg-12 d-flex text-center">
+            <div style={{ margin: '30px 0', display: 'flex', justifyContent: 'center' }} className="col-lg-12 text-center">
               {
                 this.state.colours.length > 0 && this.state.colours.map(function(colour, i){
-                  return <div key={i} style={{ backgroundColor: colour, width: '100px', height: '100px', borderRadius: '100px', border: '1px solid black',  margin: '18px' }}></div>
+                  return <div><div key={i} style={{ backgroundColor: colour, width: '100px', height: '100px', borderRadius: '100px', border: '1px solid black',  margin: '18px' }}></div>{colour}</div>
                 })
               }
             </div>

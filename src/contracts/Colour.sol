@@ -25,9 +25,16 @@ contract Colour is ERC721, ERC721Enumerable, Pausable, Ownable, ERC721Burnable {
         _tokenIdCounter.increment();
     }
 
+    // TODO add
+    // https://docs.ens.domains/contract-api-reference/reverseregistrar
+    // function node(address addr) public {
+    //     returns (bytes32);
+    // }
+
     // should be an owner for production use
     function mint(string memory _colour) public { 
-      require(!_colourExists[_colour], 'Colour must be unique');
+      require(!_colourExists[_colour]);
+    //   require(!_colourExists[_colour], 'Colour must be unique');
       colours.push(_colour);
       uint256 _id = colours.length;
       _mint(msg.sender, _id);
