@@ -1,4 +1,9 @@
-# totem-soul-nft
+# Colour
+
+This is a simple DAPP to demonstrate how NFT's can be created in the form of unique Hex values (colours) and shown on screen, only 
+those owned by that user (wallet address).
+
+The react code can be run and seen via the ropsten network, or run locally via Ganache.
 
 Setup:
 
